@@ -12,3 +12,5 @@ requirements.txt
 Thumbs.db
 .vscode/
 .idea/
+
+.env
