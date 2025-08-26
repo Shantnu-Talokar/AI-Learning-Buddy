@@ -1,0 +1,54 @@
+{
+  "shantnutalokar@gmail.com": {
+    "status": "approved",
+    "timestamp": "2025-06-29T06:24:41.813Z"
+  },
+  "tanishhande@gmail.com": {
+    "status": "approved",
+    "timestamp": "2025-06-29T08:21:03.102Z"
+  },
+  "aditya@gmail.com": {
+    "status": "rejected",
+    "timestamp": "2025-06-29T08:37:53.296Z"
+  },
+  "pranaybendle@gmail.com": {
+    "status": "rejected",
+    "timestamp": "2025-06-29T10:00:05.436Z"
+  },
+  "shantnu": {
+    "status": "approved",
+    "timestamp": "2025-06-29T16:17:43.343Z"
+  },
+  "Shekhar": {
+    "status": "approved",
+    "timestamp": "2025-07-06T13:10:36.451Z"
+  },
+  "ansh": {
+    "status": "rejected",
+    "timestamp": "2025-07-25T13:52:46.056Z"
+  },
+  "Shantnu": {
+    "status": "approved",
+    "timestamp": "2025-07-26T11:07:13.304Z"
+  },
+  "Emmi": {
+    "status": "approved",
+    "timestamp": "2025-07-26T11:18:33.738Z"
+  },
+  "pranay10": {
+    "status": "rejected",
+    "timestamp": "2025-08-20T13:14:27.132Z"
+  },
+  "ggg": {
+    "status": "rejected",
+    "timestamp": "2025-08-20T13:15:08.595Z"
+  },
+  "fff": {
+    "status": "approved",
+    "timestamp": "2025-08-20T13:15:32.905Z"
+  },
+  "sss": {
+    "status": "approved",
+    "timestamp": "2025-08-20T13:16:40.759Z"
+  }
+}
