@@ -69,7 +69,7 @@ Prompts email → sends to http://localhost:3000/check-access
 
 Add a new browser bookmark and set the URL to:
 
-    javascript:(async()=>{await import('https://cdn.jsdelivr.net/gh/tany109043/HRX-28-Mama-Developer@main/verifier.js?t='+Date.now())})();
+    javascript:(async()=>{await import('https://cdn.jsdelivr.net/gh/Shantnu-Talokar/AI-Learning-Buddy@main/verifier.js?t='+Date.now())})();
 
 ---
 
