@@ -1,6 +1,9 @@
-# HRX‑28 Mama Developer — Learning‑Companion Bookmarklet
+# AI Learning Buddy
 
 *A one‑click bookmarklet that overlays AI study tools, webcam mood tracking, and gamified rewards onto Udemy courses.*
+
+This is my personal showcase of the **AI Learning Buddy** project.  
+The original project was developed here: [HRX-28-Mama-Developer](https://github.com/tany109043/HRX-28-Mama-Developer)
 
 > ⚠️ Note: Only `verifier.js` is public in this GitHub repo.  
 > Full logic and backend code are stored locally in two folders:
@@ -66,7 +69,7 @@ Prompts email → sends to http://localhost:3000/check-access
 
 Add a new browser bookmark and set the URL to:
 
-    javascript:(async()=>{await import('https://cdn.jsdelivr.net/gh/tany109043/HRX-28-Mama-Developer@main/verifier.js?t='+Date.now())})();
+    javascript:(async()=>{await import('https://cdn.jsdelivr.net/gh/Shantnu-Talokar/AI-Learning-Buddy@main/verifier.js?t='+Date.now())})();
 
 ---
 
