@@ -299,26 +299,41 @@
      *  🛠️ COHERE HELPER
      *************************************************/
     const apiKey = 'NIIjbP0Q2JbqHI1V1vUaq5ojEs05ePmL3eLH0EsJ';
-    const endpoint = 'https://api.cohere.ai/v1/generate';
+    const endpoint = 'https://api.cohere.ai/v1/chat';
+
     const cohereQuery = async (prompt, max = 400, temp = 0.7) => {
-        const res = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ model: 'command-r-plus', prompt, max_tokens: max, temperature: temp })
-        });
-        const data = await res.json();
-        return data.generations?.[0]?.text || '⚠️ No response';
+        try {
+            const res = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    model: 'command-r',
+                    message: prompt,
+                    temperature: temp
+                })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                console.error('❌ Cohere error:', data);
+                return '⚠️ Cohere error';
+            }
+
+            return data.text || '⚠️ No response';
+        } catch (err) {
+            console.error('❌ Network error:', err);
+            return '⚠️ Network error';
+        }
     };
 
     const cohereQueryy = async (prompt, max = 450, temp = 0.6) => {
-        const res = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ model: 'command-r-plus', prompt, max_tokens: max, temperature: temp })
-        });
-        const data = await res.json();
-        return data.generations?.[0]?.text || '⚠️ No response';
+        return cohereQuery(prompt, max, temp);
     };
+
     /******************* Transcript Fetcher **************/
     async function fetchTranscript() {
         // Preferred selector supplied by user
@@ -1438,16 +1453,20 @@ Generate lines related to the topic: "${topic}"
 Only output the JSON — no extra text.
 `;
 
-        const resp = await fetch("https://api.cohere.ai/v1/generate", {
-            method: "POST",
-            headers: {
-                "Authorization": "Bearer NIIjbP0Q2JbqHI1V1vUaq5ojEs05ePmL3eLH0EsJ",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ model: "command", prompt, max_tokens: 100, temperature: 0.9 })
-        });
+        const resp = await fetch("https://api.cohere.ai/v1/chat", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${apiKey}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            model: "command-r",
+            message: prompt,
+            temperature: 0.9
+        })
+    });
 
-        const text = (await resp.json()).generations?.[0]?.text || "";
+    const text = (await resp.json()).text || "";
         let parsed;
 
         try {
