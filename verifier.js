@@ -13,7 +13,7 @@
 
   async function poll() {
     try {
-      const res = await fetch(`http://localhost:3000/check-access?email=${encodeURIComponent(email)}`);
+      const res = await fetch(`http://localhost:3001/check-access?email=${encodeURIComponent(email)}`);
       const text = await res.text();
 
       if (res.ok) {
